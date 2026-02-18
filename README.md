@@ -1,178 +1,160 @@
-# 📊 Students Performance – Machine Learning Dashboard
+# 📊 Students Performance -- Dashboard de Machine Learning
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
 ![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-ML-orange)
 ![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-red)
 ![Status](https://img.shields.io/badge/Status-Active-success)
 
-End-to-End Machine Learning project where I analyze academic performance data and build predictive models to estimate math scores using explainable AI techniques.
+Proyecto End-to-End de Machine Learning en el que analizo datos de
+rendimiento académico y construyo modelos predictivos para estimar la
+nota en matemáticas utilizando técnicas de Inteligencia Artificial
+explicable.
 
----
+------------------------------------------------------------------------
 
-## 👨‍💻 About Me
+## 👨‍💻 Sobre Mí
 
-**Andrés Quirós Rojas**  
-Computer Engineering Student  
-Instituto Tecnológico de Costa Rica  
+**Andrés Quirós Rojas**\
+Estudiante de Ingeniería en Computación\
+Instituto Tecnológico de Costa Rica
 
----
+------------------------------------------------------------------------
 
-## 🎯 Project Objective
+## 🎯 Objetivo del Proyecto
 
-The objective of this project is to simulate a real-world Machine Learning pipeline by:
+El objetivo de este proyecto es simular un pipeline real de Machine
+Learning mediante:
 
-- Performing Exploratory Data Analysis (EDA)
-- Building preprocessing pipelines
-- Comparing regression models
-- Applying cross-validation
-- Interpreting model behavior using SHAP
-- Deploying an interactive dashboard with Streamlit
-- Generating automated PDF performance reports
+-   Análisis Exploratorio de Datos (EDA)\
+-   Construcción de pipelines de preprocesamiento\
+-   Comparación de modelos de regresión\
+-   Aplicación de validación cruzada\
+-   Interpretación del comportamiento del modelo con SHAP\
+-   Despliegue de un dashboard interactivo con Streamlit\
+-   Generación automática de reportes en PDF
 
----
+------------------------------------------------------------------------
 
 ## 📊 Dataset
 
-**Dataset:** Students Performance Dataset  
+**Conjunto de datos:** Students Performance Dataset
 
-### 🎯 Target Variable
-- `math score`
+### 🎯 Variable Objetivo
 
-### 📌 Predictor Variables
-- Reading score  
-- Writing score  
-- Gender  
-- Parental level of education  
-- Lunch type  
-- Test preparation course  
+-   `math score` (nota en matemáticas)
 
----
+### 📌 Variables Predictoras
 
-## 🧠 Machine Learning Pipeline
+-   Nota en lectura\
+-   Nota en escritura\
+-   Género\
+-   Nivel educativo de los padres\
+-   Tipo de almuerzo\
+-   Curso de preparación para el examen
 
-### 🔹 Data Preprocessing
+------------------------------------------------------------------------
 
-- Train/Test Split (80/20)
-- ColumnTransformer
-- StandardScaler (numerical features)
-- OneHotEncoder (categorical features)
-- 5-Fold Cross Validation
+## 🧠 Pipeline de Machine Learning
 
-### 🔹 Models Implemented
+### 🔹 Preprocesamiento de Datos
 
-- Linear Regression  
-- Random Forest Regressor  
+-   División Train/Test (80/20)\
+-   ColumnTransformer\
+-   StandardScaler (variables numéricas)\
+-   OneHotEncoder (variables categóricas)\
+-   Validación Cruzada de 5 folds
 
-### 🔹 Evaluation Metrics
+### 🔹 Modelos Implementados
 
-Each model is evaluated using:
+-   Regresión Lineal\
+-   Random Forest Regressor
 
-- R² Score  
-- MAE (Mean Absolute Error)  
-- RMSE (Root Mean Squared Error)  
-- Cross-Validation Mean R²  
+### 🔹 Métricas de Evaluación
 
----
+Cada modelo se evalúa utilizando:
 
-## 📈 Model Interpretability
+-   R² Score\
+-   MAE (Error Absoluto Medio)\
+-   RMSE (Raíz del Error Cuadrático Medio)\
+-   Promedio de R² en Validación Cruzada
 
-To ensure transparency and explainability:
+------------------------------------------------------------------------
 
-- Feature Importance (Random Forest)
-- SHAP values analysis
-- Actual vs Predicted comparison plots
+## 📈 Interpretabilidad del Modelo
 
-This allows better understanding of how different variables impact student performance predictions.
+Para garantizar transparencia y explicabilidad:
 
----
+-   Importancia de Variables (Random Forest)\
+-   Análisis de valores SHAP\
+-   Gráficos de comparación Real vs Predicho
 
-## 📌 Key Insights
+------------------------------------------------------------------------
 
-- Reading and writing scores are the strongest predictors of math performance.
-- Students who completed test preparation courses tend to perform better.
-- Socioeconomic indicators (lunch type) influence academic outcomes.
-- SHAP confirms the relevance and contribution of main predictive features.
+## 📌 Principales Hallazgos
 
----
+-   Las notas de lectura y escritura son los predictores más fuertes del
+    desempeño en matemáticas.\
+-   Los estudiantes que completaron el curso de preparación tienden a
+    obtener mejores resultados.\
+-   Indicadores socioeconómicos (tipo de almuerzo) influyen en el
+    rendimiento académico.\
+-   SHAP confirma la relevancia y contribución de las variables
+    predictoras principales.
 
-## 🏗️ Project Structure
+------------------------------------------------------------------------
 
-```
-students-performance-ml-dashboard/
-│
-├── app.py              # Streamlit dashboard
-├── eda.py              # Exploratory analysis functions
-├── ml.py               # ML pipeline and model comparison
-├── utils.py            # Logging and dataset loading
-├── report.py           # Automated PDF report generation
-├── requirements.txt
-├── StudentsPerformance.csv
-└── README.md
-```
+## 🏗️ Estructura del Proyecto
 
----
+    students-performance-ml-dashboard/
+    │
+    ├── app.py
+    ├── eda.py
+    ├── ml.py
+    ├── utils.py
+    ├── report.py
+    ├── requirements.txt
+    ├── StudentsPerformance.csv
+    └── README.md
 
-## 🚀 How to Run
+------------------------------------------------------------------------
 
-### 1️⃣ Clone the repository
+## 🚀 Cómo Ejecutarlo
 
-```bash
+### 1️⃣ Clonar el repositorio
+
+``` bash
 git clone https://github.com/anquiro20/students-performance-ml-dashboard.git
 cd students-performance-ml-dashboard
 ```
 
-### 2️⃣ Install dependencies
+### 2️⃣ Instalar dependencias
 
-```bash
+``` bash
 pip install -r requirements.txt
 ```
 
-### 3️⃣ Run the application
+### 3️⃣ Ejecutar la aplicación
 
-```bash
+``` bash
 streamlit run app.py
 ```
 
-The dashboard will open locally in your browser.
+------------------------------------------------------------------------
 
----
+## 🛠️ Tecnologías Utilizadas
 
-## 🛠️ Technologies Used
+-   Python\
+-   Pandas\
+-   NumPy\
+-   Scikit-learn\
+-   SHAP\
+-   Plotly\
+-   Streamlit\
+-   ReportLab
 
-- Python  
-- Pandas  
-- NumPy  
-- Scikit-learn  
-- SHAP  
-- Plotly  
-- Streamlit  
-- ReportLab  
+------------------------------------------------------------------------
 
----
+## 📬 Contacto
 
-## 💡 What This Project Demonstrates
-
-Through this project, I demonstrate my ability to:
-
-- Design modular Machine Learning architectures  
-- Apply structured preprocessing pipelines  
-- Compare and evaluate regression models properly  
-- Use explainable AI techniques  
-- Build interactive dashboards  
-- Translate technical results into actionable insights  
-
----
-
-## 🔮 Future Improvements
-
-- Hyperparameter tuning (GridSearchCV / RandomizedSearchCV)  
-- Model persistence using joblib  
-- Cloud deployment (Streamlit Cloud / Render)  
-- Docker containerization  
-- Testing with larger and more complex datasets  
-
----
-
-## 📬 Contact
-
-If you would like to connect or discuss this project, feel free to reach out.
+Si deseas conectar o conversar sobre este proyecto, no dudes en
+contactarme.
