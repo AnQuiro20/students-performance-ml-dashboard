@@ -1,160 +1,121 @@
-# 📊 Students Performance -- Dashboard de Machine Learning
+<div align="center">
 
-![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
-![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-ML-orange)
-![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-red)
-![Status](https://img.shields.io/badge/Status-Active-success)
+# 📊 Student Performance ML Dashboard
 
-Proyecto End-to-End de Machine Learning en el que analizo datos de
-rendimiento académico y construyo modelos predictivos para estimar la
-nota en matemáticas utilizando técnicas de Inteligencia Artificial
-explicable.
+### An end-to-end machine learning workflow with explainable predictions
 
-------------------------------------------------------------------------
+![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white)
+![Scikit-learn](https://img.shields.io/badge/ML-Scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white)
+![Streamlit](https://img.shields.io/badge/App-Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white)
+![SHAP](https://img.shields.io/badge/Explainability-SHAP-7B61FF?style=flat-square)
+![Status](https://img.shields.io/badge/Status-Active-success?style=flat-square)
 
-## 👨‍💻 Sobre Mí
+</div>
 
-**Andrés Quirós Rojas**\
-Estudiante de Ingeniería en Computación\
-Instituto Tecnológico de Costa Rica
+This project analyzes student-performance data and builds regression models to estimate mathematics scores. It covers the full workflow—from exploratory analysis and preprocessing to model evaluation, explainability, an interactive dashboard, and automated PDF reporting.
 
-------------------------------------------------------------------------
+## Project Goal
 
-## 🎯 Objetivo del Proyecto
+The goal is to reproduce the key stages of a practical machine learning project:
 
-El objetivo de este proyecto es simular un pipeline real de Machine
-Learning mediante:
+- perform exploratory data analysis
+- build a reusable preprocessing pipeline
+- compare regression models
+- evaluate generalization with cross-validation
+- explain model behavior with SHAP
+- expose results through an interactive Streamlit application
+- generate downloadable PDF reports
 
--   Análisis Exploratorio de Datos (EDA)\
--   Construcción de pipelines de preprocesamiento\
--   Comparación de modelos de regresión\
--   Aplicación de validación cruzada\
--   Interpretación del comportamiento del modelo con SHAP\
--   Despliegue de un dashboard interactivo con Streamlit\
--   Generación automática de reportes en PDF
+## Machine Learning Workflow
 
-------------------------------------------------------------------------
+```mermaid
+flowchart LR
+    A[Dataset] --> B[EDA]
+    B --> C[Preprocessing]
+    C --> D[Model Training]
+    D --> E[Evaluation]
+    E --> F[SHAP Explanations]
+    F --> G[Streamlit Dashboard]
+```
 
-## 📊 Dataset
+### Dataset and Target
 
-**Conjunto de datos:** Students Performance Dataset
+The project uses the **Students Performance Dataset**.
 
-### 🎯 Variable Objetivo
+- **Target:** `math score`
+- **Predictors:** reading score, writing score, gender, parental education, lunch type, and test-preparation course
 
--   `math score` (nota en matemáticas)
+### Preprocessing
 
-### 📌 Variables Predictoras
+- 80/20 train-test split
+- `ColumnTransformer` pipeline
+- `StandardScaler` for numerical variables
+- `OneHotEncoder` for categorical variables
+- five-fold cross-validation
 
--   Nota en lectura\
--   Nota en escritura\
--   Género\
--   Nivel educativo de los padres\
--   Tipo de almuerzo\
--   Curso de preparación para el examen
+### Models
 
-------------------------------------------------------------------------
+- Linear Regression
+- Random Forest Regressor
 
-## 🧠 Pipeline de Machine Learning
+### Evaluation
 
-### 🔹 Preprocesamiento de Datos
+Each model is compared using:
 
--   División Train/Test (80/20)\
--   ColumnTransformer\
--   StandardScaler (variables numéricas)\
--   OneHotEncoder (variables categóricas)\
--   Validación Cruzada de 5 folds
+- R²
+- Mean Absolute Error (MAE)
+- Root Mean Squared Error (RMSE)
+- mean cross-validation R²
 
-### 🔹 Modelos Implementados
+## Explainability
 
--   Regresión Lineal\
--   Random Forest Regressor
+The dashboard goes beyond returning a prediction. It includes:
 
-### 🔹 Métricas de Evaluación
+- Random Forest feature importance
+- SHAP value analysis
+- actual-versus-predicted visualizations
 
-Cada modelo se evalúa utilizando:
+This makes it possible to inspect which variables influence model behavior instead of treating the model as a black box.
 
--   R² Score\
--   MAE (Error Absoluto Medio)\
--   RMSE (Raíz del Error Cuadrático Medio)\
--   Promedio de R² en Validación Cruzada
+## Findings Observed in the Analysis
 
-------------------------------------------------------------------------
+- Reading and writing scores are the strongest predictors of mathematics performance.
+- Students who completed the test-preparation course tend to obtain better results.
+- Lunch type, used in the dataset as a socioeconomic indicator, is associated with performance differences.
+- SHAP analysis supports the relevance of the main predictive variables.
 
-## 📈 Interpretabilidad del Modelo
+These findings describe patterns in this dataset and should not be interpreted as causal conclusions.
 
-Para garantizar transparencia y explicabilidad:
+## Project Structure
 
--   Importancia de Variables (Random Forest)\
--   Análisis de valores SHAP\
--   Gráficos de comparación Real vs Predicho
+```text
+students-performance-ml-dashboard/
+├── app.py                 # Streamlit application
+├── eda.py                 # Exploratory data analysis
+├── ml.py                  # Preprocessing and models
+├── utils.py               # Shared utilities
+├── report.py              # PDF report generation
+├── requirements.txt
+├── StudentsPerformance.csv
+└── README.md
+```
 
-------------------------------------------------------------------------
+## Run Locally
 
-## 📌 Principales Hallazgos
-
--   Las notas de lectura y escritura son los predictores más fuertes del
-    desempeño en matemáticas.\
--   Los estudiantes que completaron el curso de preparación tienden a
-    obtener mejores resultados.\
--   Indicadores socioeconómicos (tipo de almuerzo) influyen en el
-    rendimiento académico.\
--   SHAP confirma la relevancia y contribución de las variables
-    predictoras principales.
-
-------------------------------------------------------------------------
-
-## 🏗️ Estructura del Proyecto
-
-    students-performance-ml-dashboard/
-    │
-    ├── app.py
-    ├── eda.py
-    ├── ml.py
-    ├── utils.py
-    ├── report.py
-    ├── requirements.txt
-    ├── StudentsPerformance.csv
-    └── README.md
-
-------------------------------------------------------------------------
-
-## 🚀 Cómo Ejecutarlo
-
-### 1️⃣ Clonar el repositorio
-
-``` bash
-git clone https://github.com/anquiro20/students-performance-ml-dashboard.git
+```bash
+git clone https://github.com/AnQuiro20/students-performance-ml-dashboard.git
 cd students-performance-ml-dashboard
-```
-
-### 2️⃣ Instalar dependencias
-
-``` bash
 pip install -r requirements.txt
-```
-
-### 3️⃣ Ejecutar la aplicación
-
-``` bash
 streamlit run app.py
 ```
 
-------------------------------------------------------------------------
+## Tech Stack
 
-## 🛠️ Tecnologías Utilizadas
+Python · Pandas · NumPy · Scikit-learn · SHAP · Plotly · Streamlit · ReportLab
 
--   Python\
--   Pandas\
--   NumPy\
--   Scikit-learn\
--   SHAP\
--   Plotly\
--   Streamlit\
--   ReportLab
+## Author
 
-------------------------------------------------------------------------
+**Andrés Quirós Rojas**  
+Computer Engineering Student — Tecnológico de Costa Rica
 
-## 📬 Contacto
-
-Si deseas conectar o conversar sobre este proyecto, no dudes en
-contactarme.
+[GitHub Profile](https://github.com/AnQuiro20) · [Portfolio](https://anquiro20.github.io/Mi_portafolio/) · [LinkedIn](https://www.linkedin.com/in/andres-quirós-b769a0366)
